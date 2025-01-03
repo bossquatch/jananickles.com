@@ -134,8 +134,8 @@
                             </div>
                         </div>
 
-                        <div>
-                            <a href="files" class="text-green-600 hover:text-green-500">CEMP Files</a>
+                        <div class="py-10 text-2xl font-bold underline">
+                            <a href="files" class="text-green-600 hover:text-green-400">CEMP Files</a>
                         </div>
                     </main>
 

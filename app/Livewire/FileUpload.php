@@ -20,7 +20,7 @@
 		{
 //			$this->validate();
 			$this->validate([
-				'file' => 'required|max:51200',
+				'file' => 'required|max:80000',
 			]);
 			$original_filename = $this->file->getClientOriginalName();
 			$this->file->storeAs(path: '/EM/cemp', name: $original_filename);
