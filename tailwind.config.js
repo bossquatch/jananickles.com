@@ -10,8 +10,10 @@ module.exports = {
         './resources/**/*.js',
         './resources/**/*.vue',
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
+        "./vendor/livewire/flux-pro/stubs/**/*.blade.php",
+        "./vendor/livewire/flux/stubs/**/*.blade.php",
     ],
-    // darkMode: 'class',
+    darkMode: 'selector',
 
     safelist: [
         'px-4',
@@ -33,10 +35,10 @@ module.exports = {
         'text-3xl',
         'lg:text-4xl',
         {
-            pattern: /bg-(slate|gray|zinc|amber|teal|sky|violet|indigo|purple|yellow|green|pink|orange|fuschia|emerald|pacifica|sulu|blaze-orange|powdered-nose|jaffa|carnation)-(100|200|300|400|500|600|700|800|900)/,
+            pattern: /bg-(blue|slate|gray|zinc|amber|teal|sky|violet|indigo|purple|yellow|green|pink|orange|fuschia|emerald|pacifica|sulu|blaze-orange|powdered-nose|jaffa|carnation)-(100|200|300|400|500|600|700|800|900)/,
         },
         {
-            pattern: /text-(slate|gray|zinc|amber|teal|sky|violet|indigo|purple|yellow|green|pink|orange|fuschia|emerald|pacifica|sulu|blaze-orange|powdered-nose|jaffa|carnation)-(100|200|300|400|500|600|700|800|900)/,
+            pattern: /text-(blue|slate|gray|zinc|amber|teal|sky|violet|indigo|purple|yellow|green|pink|orange|fuschia|emerald|pacifica|sulu|blaze-orange|powdered-nose|jaffa|carnation)-(100|200|300|400|500|600|700|800|900)/,
         },
     ],
 

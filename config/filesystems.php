@@ -94,5 +94,9 @@
 			public_path('docs') => storage_path('app/docs'),
 			public_path('files') => storage_path('app/files'),
 		],
+		
+		'folders' => [
+			'cemp' => env('FOLDER_CEMP', '/EM/cemp'),
+		],
 	
 	];

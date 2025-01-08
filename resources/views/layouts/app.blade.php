@@ -24,6 +24,7 @@
             }
         </style>
         @livewireStyles
+        @fluxStyles
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
@@ -41,11 +42,11 @@
             <!-- Page Content -->
             <main class="m-10">
                 {{ $slot }}
-                <p>{{ config('app.name') }}</p>
             </main>
         </div>
 
         @livewireScripts
+        @fluxScripts
         <script>
             document.addEventListener('alpine:init', () => {
                 // Magic: $tooltip
