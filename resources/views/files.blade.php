@@ -15,8 +15,10 @@
         <div class="py-2 px-5 bg-gray-200 rounded-md border-4 border-sky-500">
             <livewire:file-upload />
         </div>
-        <div class="py-5 px-5 bg-gray-200 rounded-md border-4 border-lime-500">
-            <livewire:file-download />
-        </div>
+        @if(auth()->user())
+            <div class="py-5 px-5 bg-gray-200 rounded-md border-4 border-lime-500">
+                <livewire:file-download />
+            </div>
+        @endif
     </div>
 </x-app-layout>

@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'welcome');
+Route::view('/', 'dashboard')
+	->middleware(['auth', 'verified'])
+	->name('home');
 Route::view('/files', 'files');
 
 Route::view('dashboard', 'dashboard')

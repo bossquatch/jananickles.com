@@ -26,6 +26,14 @@
 				'name' => 'file-type-docx',
 				'color' => 'text-blue-400',
 			],
+			'xls' => [
+				'name' => 'file-type-xls',
+				'color' => 'text-green-600',
+			],
+			'xlsx' => [
+				'name' => 'file-type-xls',
+				'color' => 'text-green-600',
+			],
 			'zip' => [
 				'name' => 'file-type-zip',
 				'color' => 'text-bleached-cedar-400',
@@ -36,34 +44,35 @@
 			],
 			'file' => [
 				'name' => 'file',
-				'color' => 'text-carnation-400',
+				'color' => 'text-gray-500',
 			],
 		];
 		
 		#[Validate([
-			'files.*' => 'max:81920', 'extensions:pdf,doc,docx',
+			'files.*' => 'max:89120|extensions:pdf,doc,docx,xls,xlsx,zip,gz,mp4'
 		], message: [
-			'max' => 'File size must be less than 80MB',
-			'extensions' => 'File must be a PDF, Word document, or ZIP file',
-		])]
-		public $files;
+			'files.*.max' => 'File size too large. Max size is 80MB',
+			'files.*.extensions' => 'Invalid file type. Valid file types are: pdf, doc, docx, xls, xlsx, zip, gz'
+		]
+		)]
+		public $files = [];
+		public $fileFeedback = [];
 		public $filePath = '';
 	
 		public function mount()
 		{
 			$this->filePath = config('filesystems.folders.cemp');
-			$this->resetErrorBag();
-			$this->resetValidation();
 		}
 		
-		public function updated()
-		{
-			$this->resetErrorBag();
-			$this->resetValidation();
-		}
+//		public function updated()
+//		{
+//			$this->resetErrorBag();
+//			$this->resetValidation();
+//		}
 		
 		public function save()
 		{
+			$this->validate();
 			foreach ($this->files as $file) {
 				$original_filename = $file->getClientOriginalName();
 				$file->storeAs(path: $this->filePath, name: $original_filename);

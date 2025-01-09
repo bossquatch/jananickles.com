@@ -12,6 +12,9 @@
                     {{ __("You're logged in!") }}
                 </div>
             </div>
+            <div>
+                <a href="files" class="text-green-600 hover:text-green-400">CEMP Files</a>
+            </div>
         </div>
     </div>
 </x-app-layout>
